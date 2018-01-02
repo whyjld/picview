@@ -22,7 +22,7 @@ int main (int argc, char* argv[])
 	signal(SIGINT, sighandler);
 	signal(SIGTERM, sighandler);
 
-    glContext context;
+    glContext context(200, 200);
     std::cout << "Frame size:(" << context.getWidth() << ", " << context.getHeight() << ")" << std::endl;
     
     Texture tex2d;
@@ -56,7 +56,7 @@ void main()\n
         ), 0, GL_VERTEX_SHADER),
     
         Shader(SHADER_SOURCE(
-precision mediump float;\n
+//#precision mediump float;\n
 \n
 varying vec2 tc;\n
 \n
